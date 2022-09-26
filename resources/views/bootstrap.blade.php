@@ -29,8 +29,8 @@
                             @if(Request::routeIs('product.*'))<span class="sr-only">(current)</span>@endif
                         </a>
                     </li>
-                    <li class="nav-item @if(Request::routeIs('cart')) active @endif">
-                        <a class="nav-link" href="{{ route('cart_get') }}">Cart
+                    <li class="nav-item @if(Request::routeIs('cart.*')) active @endif">
+                        <a class="nav-link" href="{{ route('cart.get') }}">Cart
                             @if(Request::routeIs('cart'))<span class="sr-only">(current)</span>@endif
                         </a>
                     </li>
@@ -39,7 +39,7 @@
                     </li>
                 </ul>
             </div>
-            <a class="btn btn-primary" href="{{ route('cart_get') }}" role="button">Cart @if (isset($cartitemCount) &&
+            <a class="btn btn-primary" href="{{ route('cart.get') }}" role="button">Cart @if (isset($cartitemCount) &&
                 $cartitemCount > 0) <span class="badge badge-light">{{ $cartitemCount }}</span>@endif</a>
         </div>
     </header>

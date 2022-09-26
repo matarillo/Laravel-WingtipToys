@@ -12,12 +12,12 @@
     <aside class="col-md-3">
         <div class="card">
             <div class="card-body">
-                <p><a href="{{ route('product_all') }}">All Items <span
+                <p><a href="{{ route('product.all') }}">All Items <span
                             class="badge badge-secondary badge-pill">{{ $categories->sum('products_count') }}</span></a>
                 </p>
                 <ul>
                     @foreach ($categories as $category)
-                    <li><a href="{{ route('product_category', ['CategoryId' => $category->id]) }}">{{ $category->name }}
+                    <li><a href="{{ route('product.category', ['CategoryId' => $category->id]) }}">{{ $category->name }}
                             <span class="badge badge-secondary badge-pill">{{ $category->products_count }}</span></a>
                     </li>
                     @endforeach
@@ -27,7 +27,7 @@
     </aside>
     <main class="col-md-9">
         <h1>{{ $categoryName }}</h1>
-        <form action="{{ route('cart_post') }}" method="post">
+        <form action="{{ route('cart.post') }}" method="post">
             {{ csrf_field() }}
             @if ($categoryId > 0)
             <input type="hidden" name="categoryId" value="{{ $categoryId }}">
