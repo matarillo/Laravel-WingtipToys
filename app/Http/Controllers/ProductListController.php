@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
+use App\Services\ShoppingCartService;
 
 class ProductListController extends Controller
 {
-    public function list(Request $request, $categoryId = 0) {
-        $cartitemCount = 0;
+    public function list(Request $request, ShoppingCartService $cart, $categoryId = 0) {
+        $cartItemCount = $cart->sumQuantities();
         $categories = Category::withCount('products')->orderBy('id', 'asc')->get();
         if ($categoryId === 0) {
             $categoryName = 'All Items';
@@ -21,7 +22,7 @@ class ProductListController extends Controller
         }
         return view('product', [
             'currentUrl' => $request->url(),
-            'cartitemCount' => $cartitemCount,
+            'cartItemCount' => $cartItemCount,
             'categories' => $categories,
             'categoryId' => $categoryId,
             'categoryName' => $categoryName,

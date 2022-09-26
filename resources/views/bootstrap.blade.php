@@ -17,8 +17,7 @@
     <header class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="{{ url('') }}">WingtipToys</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -39,8 +38,8 @@
                     </li>
                 </ul>
             </div>
-            <a class="btn btn-primary" href="{{ route('cart.get') }}" role="button">Cart @if (isset($cartitemCount) &&
-                $cartitemCount > 0) <span class="badge badge-light">{{ $cartitemCount }}</span>@endif</a>
+            <a class="btn btn-primary" href="{{ route('cart.get') }}" role="button">Cart @if (isset($cartItemCount) &&
+                $cartItemCount > 0) <span class="badge badge-light">{{ $cartItemCount }}</span>@endif</a>
         </div>
     </header>
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductListController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,8 @@ use App\Http\Controllers\ProductListController;
 |
 */
 
-Route::get('/', [ ProductListController::class, 'list'])->name('product.all');
-Route::get('/categories/{CategoryId}', [ ProductListController::class, 'list'])->name('product.category');
-Route::get('/cart', 'CartController@list')->name('cart.get');
-Route::post('/cart', 'CartController@add')->name('cart.post');
+Route::get('/', [ProductListController::class, 'list'])->name('product.all');
+Route::get('/categories/{CategoryId}', [ProductListController::class, 'list'])->name('product.category');
+Route::get('/cart', [CartController::class, 'list'])->name('cart.get');
+Route::post('/cart', [CartController::class, 'add'])->name('cart.post');
 Route::post('/order', 'OrderController@exec')->name('order.exec');

@@ -12,8 +12,7 @@
     <aside class="col-md-3">
         <div class="card">
             <div class="card-body">
-                <p><a href="{{ route('product.all') }}">All Items <span
-                            class="badge badge-secondary badge-pill">{{ $categories->sum('products_count') }}</span></a>
+                <p><a href="{{ route('product.all') }}">All Items <span class="badge badge-secondary badge-pill">{{ $categories->sum('products_count') }}</span></a>
                 </p>
                 <ul>
                     @foreach ($categories as $category)
@@ -37,8 +36,7 @@
                 <div class="card-body row">
                     <aside class="col-md-3">
                         <a href="#" class="img-wrap">
-                            <img src="{{ asset('/img/thumbnail/' . $product->image_path) }}"
-                                alt="{{ $product->name }}">
+                            <img src="{{ asset('/img/thumbnail/' . $product->image_path) }}" alt="{{ $product->name }}">
                         </a>
                     </aside>
                     <div class="col-md-6">
@@ -55,8 +53,7 @@
                             <p class="text-success">{{ $product->category->name }}</p>
                             <br>
                             <p>
-                                <button class="btn btn-primary btn-block" type="submit" name="ProductId"
-                                    value="{{ $product->id }}">Add to Cart</button>
+                                <button class="btn btn-primary btn-block" type="submit" name="productId" value="{{ $product->id }}">Add to Cart</button>
                             </p>
                         </div>
                     </aside>
